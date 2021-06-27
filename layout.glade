@@ -4,6 +4,8 @@
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkApplicationWindow" id="applicationwindow1">
     <property name="can-focus">False</property>
+    <property name="default-width">400</property>
+    <property name="default-height">500</property>
     <child>
       <object class="GtkBox" id="global_layout_box">
         <property name="visible">True</property>
@@ -90,10 +92,10 @@
                 <property name="can-focus">False</property>
                 <property name="homogeneous">True</property>
                 <child>
-                  <object class="GtkLabel" id="return_layout">
+                  <object class="GtkLabel" id="math_layout">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">return</property>
+                    <property name="label" translatable="yes">Matheo</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -102,7 +104,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="return_btn">
+                  <object class="GtkSwitch" id="math_btn">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                   </object>
@@ -120,8 +122,78 @@
               </packing>
             </child>
             <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="fire_layout">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Fire Emblem</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="fire_btn">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="ret_layout">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">return</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="ret_btn">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="generate_btn">
-                <property name="label" translatable="yes">Generer</property>
+                <property name="label" translatable="yes">Génerer</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -129,7 +201,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">3</property>
+                <property name="position">5</property>
               </packing>
             </child>
           </object>
@@ -148,6 +220,9 @@
               <object class="GtkLabel" id="message_out">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="margin-top">6</property>
+                <property name="margin-bottom">7</property>
+                <property name="label" translatable="yes">ee</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -159,7 +234,9 @@
               <object class="GtkImage" id="img_out">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="pixbuf">img/jojo.jpeg</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">../jojo2021/img/jojo.jpeg</property>
               </object>
               <packing>
                 <property name="expand">False</property>
