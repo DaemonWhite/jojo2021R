@@ -17,8 +17,10 @@ fn main() {
         let message_input : gtk::Entry = builder.object("jojo_message").unwrap();
         let button : gtk::Button = builder.object("generate_btn").unwrap();
         let message_output : gtk::Label = builder.object("message_out").unwrap();
+
         let image_output : gtk::Image = builder.object("img_out").unwrap();
         let image_output_clone = image_output.clone();
+
         let ret_switch : gtk::Switch = builder.object("ret_btn").unwrap();
         let brad_switch : gtk::Switch = builder.object("brad_btn").unwrap();
         let math_switch : gtk::Switch = builder.object("math_btn").unwrap();
@@ -31,58 +33,51 @@ fn main() {
             let is_fire = fire_switch.is_active();;
             let message_gstring = message_input.text();
             let message = if message_gstring.as_str().is_empty() { &"Create by DaemonWhite" } else { message_gstring.as_str() };
+            let mut _img = "/img/jojo.jpeg";
 
             if  is_brad && is_math && is_ret && is_fire {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/1.jpeg");
+                _img = "./img/1.jpeg"
             } else if is_brad && is_math && is_ret {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/2.jpg");
+                _img = "./img/2.jpg"
             } else if is_brad && is_math && is_fire {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/4.png");
+                _img = "./img/4.png"
             } else if is_brad && is_ret && is_fire {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/7.jpg");
+                _img = "./img/7.jpg"
             } else if is_math && is_ret && is_fire {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/10.jpeg");
+                _img = "./img/10.jpeg"
             } else if is_brad && is_math {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/3.png");
+                _img = "./img/3.png"
             } else if is_brad && is_fire {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/5.png");
+                _img = "./img/5.png"
             } else if is_math && is_fire {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/6.jpeg");
+                _img = "./img/6.jpeg"
             } else if is_ret && is_fire {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/8.jpeg");
+                _img = "./img/8.jpeg"
             } else if is_brad && is_ret {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/9.jpeg");
+                _img = "./img/9.jpeg"
             } else if is_math && is_ret {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/11.png");
+                _img = "./img/11.png"
             } else if is_brad {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/brad.png");
+                _img = "./img/brad.png"
             } else if is_math {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/math.jpeg");
+                _img = "./img/math.jpeg"
             } else if is_ret {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/deat.jpeg");
+                _img = "./img/deat.jpeg"
             } else if is_fire {
-		        message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/fire.jpeg");
+                _img = "./img/fire.jpeg"
             } else {
-                message_output.set_text(&format!("{} ", message,));
-                image_output_clone.set_from_file("./img/jojo.jpeg");
+                _img = "./img/jojo.jpeg"
             }
+            message_output.set_text(&format!("{} ", message,));
+            image_output_clone.set_from_file(_img);
         image_output_clone.show()
         });
+
+        let css = include_bytes!("style.css");
+        let style = gtk::CssProvider::new();
+        let screen = window.screen().unwrap();
+        style.load_from_data(css).unwrap();
+        gtk::StyleContext::add_provider_for_screen(&screen, &style, gtk::STYLE_PROVIDER_PRIORITY_USER);
 
         window.show_all();
         image_output.hide(); 

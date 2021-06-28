@@ -218,11 +218,15 @@
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkLabel" id="message_out">
+                <property name="name">message_out</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="margin-top">6</property>
                 <property name="margin-bottom">7</property>
                 <property name="label" translatable="yes">ee</property>
+                <style>
+                  <class name="&lt;message_out ici&gt;"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -232,15 +236,16 @@
             </child>
             <child>
               <object class="GtkImage" id="img_out">
+                <property name="width-request">1</property>
+                <property name="height-request">1</property>
                 <property name="visible">True</property>
+                <property name="app-paintable">True</property>
                 <property name="can-focus">False</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="pixbuf">../jojo2021/img/jojo.jpeg</property>
+                <property name="pixbuf">img/jojo.jpeg</property>
               </object>
               <packing>
                 <property name="expand">False</property>
-                <property name="fill">True</property>
+                <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
             </child>
