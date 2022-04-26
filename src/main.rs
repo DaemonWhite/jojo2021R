@@ -4,7 +4,7 @@ use std::env;
 
 fn main() {
     let app = gtk::Application::new(
-        Some("com.danlogs.jojo2021"),
+        Some("org.daemonwhite.jojo2021"),
         gio::ApplicationFlags::FLAGS_NONE,
         );
 
